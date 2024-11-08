@@ -36,15 +36,26 @@ while ($row = $result->fetch_assoc()) {
         <br>
         <h2>Contact List</h2>
         <ul id="contactList">
+            <li>
+                <strong>ID</strong>
+                <strong>Name</strong>
+                <strong>Phone</strong>
+                <strong>Email</strong>
+                <strong>Actions</strong>
+            </li>
             <?php foreach ($contacts as $contact): ?>
                 <li>
+                    <span><?= htmlspecialchars($contact['id']) ?></span>
                     <span><?= htmlspecialchars($contact['name']) ?></span>
                     <span><?= htmlspecialchars($contact['phone']) ?></span>
                     <span><?= htmlspecialchars($contact['email']) ?></span>
-                    <form method="POST" action="process.php" style="display: inline;">
-                        <input type="hidden" name="id" value="<?= $contact['id'] ?>">
-                        <button type="submit" name="delete" class="delete-btn">Delete</button>
-                    </form>
+                    <div class="contact-actions">
+                        <a href="edit.php?id=<?= $contact['id'] ?>" class="edit-btn">Edit</a>
+                        <form method="POST" action="process.php" style="display: inline;">
+                            <input type="hidden" name="id" value="<?= $contact['id'] ?>">
+                            <button type="submit" name="delete" class="delete-btn">Delete</button>
+                        </form>
+                    </div>
                 </li>
             <?php endforeach; ?>
         </ul>

@@ -18,7 +18,7 @@ body {
 
 .container {
     width: 80%;
-    max-width: 500px;
+    max-width: 700px;
     background: #fff;
     padding: 20px;
     border-radius: 8px;
@@ -64,19 +64,47 @@ ul {
 }
 
 li {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 2fr 2fr 1fr;  /* 0.5 for ID, 2 for name, phone, email, 1 for actions */
+    align-items: center;
     padding: 10px;
     border-bottom: 1px solid #ddd;
+    gap: 10px;
 }
 
+.contact-actions {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+.contact-actions button,
+.contact-actions a {
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Delete button style */
 .delete-btn {
-    background-color: #e53e3e;
-    margin-left: 10px;
+    background-color: #e53e3e; /* Red background */
+    color: white;
 }
 
 .delete-btn:hover {
-    background-color: #c53030;
+    background-color: #c53030; /* Darker red when hovered */
+}
+
+/* Edit button style - Updated with blue background */
+.edit-btn {
+    background-color: #3182ce; /* Blue background for Edit */
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #2b6cb0; /* Darker blue when hovered */
 }
 
 /* Dark Mode Styles */
@@ -110,6 +138,14 @@ body.dark-mode .delete-btn {
 
 body.dark-mode .delete-btn:hover {
     background-color: #c9302c;
+}
+
+body.dark-mode .edit-btn {
+    background-color: #3182ce; /* Blue background for Edit in dark mode */
+}
+
+body.dark-mode .edit-btn:hover {
+    background-color: #2b6cb0; /* Darker blue when hovered in dark mode */
 }
 
 /* Dark Mode Toggle Button (Upper Left) */
