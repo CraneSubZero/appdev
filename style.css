@@ -1,4 +1,4 @@
-/* style.css */
+/* Global Styles */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,12 +6,14 @@
     font-family: Arial, sans-serif;
 }
 
+/* Light Mode Styles (Default) */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background-color: #f4f4f4;
+    color: #333;
 }
 
 .container {
@@ -26,7 +28,6 @@ body {
 h1, h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #333;
 }
 
 form {
@@ -73,6 +74,69 @@ li {
     background-color: #e53e3e;
     margin-left: 10px;
 }
+
 .delete-btn:hover {
     background-color: #c53030;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f4f4f4;
+}
+
+body.dark-mode .container {
+    background-color: #333;
+    color: #f4f4f4;
+}
+
+body.dark-mode input {
+    background-color: #555;
+    border: 1px solid #777;
+    color: #fff;
+}
+
+body.dark-mode button {
+    background-color: #3a3a98;
+}
+
+body.dark-mode button:hover {
+    background-color: #2a2a75;
+}
+
+body.dark-mode .delete-btn {
+    background-color: #d9534f;
+}
+
+body.dark-mode .delete-btn:hover {
+    background-color: #c9302c;
+}
+
+/* Dark Mode Toggle Button (Upper Left) */
+#themeToggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #5a67d8;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 1000; /* Ensures button appears above other elements */
+}
+
+#themeToggle:hover {
+    background-color: #434190;
+}
+
+/* Dark mode styles for the toggle button */
+body.dark-mode #themeToggle {
+    background-color: #3a3a98;
+}
+
+body.dark-mode #themeToggle:hover {
+    background-color: #2a2a75;
 }

@@ -19,8 +19,13 @@ while ($row = $result->fetch_assoc()) {
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Dark Mode Toggle Button -->
+    <button id="themeToggle">Toggle Dark Mode</button>
+
     <div class="container">
         <h1>Contact Manager</h1>
+
         <form id="contactForm" method="POST" action="process.php">
             <input type="text" name="name" placeholder="Name" required>
             <input type="text" name="phone" placeholder="Phone" required>
@@ -28,6 +33,7 @@ while ($row = $result->fetch_assoc()) {
             <button type="submit" name="add">Add Contact</button>
         </form>
 
+        <br>
         <h2>Contact List</h2>
         <ul id="contactList">
             <?php foreach ($contacts as $contact): ?>
